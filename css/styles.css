@@ -37,6 +37,8 @@ address {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {
@@ -110,7 +112,8 @@ img {
 }
 
 .header-menu-list {
-  display: flex;
+  /* display: flex; */
+  display: none;
   gap: 24px;
 }
 
@@ -142,7 +145,8 @@ img {
 }
 
 .header-contact-list {
-  display: flex;
+  /* display: flex; */
+  display: none;
   gap: 14px;
 }
 
@@ -172,6 +176,74 @@ img {
   border-radius: 15px;
 }
 
+.mob-menu-btn{
+  background-color: transparent;
+  border: none;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  background-color: #1e1823;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobile-menu-top{
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 88px;
+  background: transparent;
+  border: none;
+}
+
+.mob-nav {
+  align-self: center;
+}
+
+.mob-menu-list {
+  margin-bottom: 50px;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mob-menu-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.mob-contact-list {
+  display: flex;
+  gap: 12px;
+}
+
+.mob-contact-item {
+ 
+}
+
+.mob-contact-link {}
+
+.mob-contact-icon {
+  fill: transparent;
+  stroke: #ffffff;
+}
 /** ============================== */
 
 /** ==============HERO================ */
@@ -181,19 +253,39 @@ img {
 }
 
 .hero-wrap {
-  padding: 380px 40px 40px 40px;
+  padding: 395px 20px 20px 20px;
   background: rgba(17, 17, 17, 0.6);
   background-image: linear-gradient(
       rgba(17, 17, 17, 0.4),
       rgba(17, 17, 17, 0.4)
     ),
-    url(../images/main-bg.jpeg);
+    url(../images/main-bg-mob.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 30px;
+}
+
+@media screen and (max-width: 1199px) and (min-resolution: 192dpi) {
+  .hero-wrap {
+    background-image: linear-gradient(rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)),
+      url(../images/main-bg-tablet-2x.jpg);
+  }
+}
+
+@media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+  .hero-wrap{
+    background-image: linear-gradient(rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)),
+        url(../images/main-bg-mob-2x.jpg);
+  }
 }
 
 .hero-title {
   font-weight: 500;
-  font-size: 28px;
+  /* font-size: 28px; */
+  font-size: 20px;
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #fff;
@@ -204,6 +296,7 @@ img {
 .hero-buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .hero-buy-btn {
@@ -213,7 +306,8 @@ img {
   border-radius: 100px;
   background-color: #fd9222;
   border: none;
-  padding: 14px 40px;
+  /* padding: 14px 40px; */
+  padding: 12px 16px;
   margin-right: 14px;
 }
 
@@ -223,17 +317,19 @@ img {
   color: #fff;
   border: 1px solid #fff;
   border-radius: 100px;
-  padding: 14px 40px;
+  /* padding: 14px 40px; */
+  padding: 12px 16px;
   background-color: transparent;
 }
 
 .hero-down-btn {
+  margin-top: 32px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.03em;
   color: #fff;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 /** ============================== */
@@ -334,7 +430,8 @@ img {
 }
 
 .made-title {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  margin-bottom: 32px;
   /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -360,14 +457,17 @@ img {
 
 .made-wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .made-image {
+  flex-shrink: 0;
 }
 
 .made-content {
-  padding: 32px;
+  /* padding: 32px; */
+  padding: 20px 14px;
   background-color: #ffffff;
 }
 
@@ -421,15 +521,27 @@ img {
 }
 
 .products-title {
+  margin-bottom: 22px;
 }
 
 .products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
 }
 
 .products-item {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  padding: 32px 0;
 }
 
 .products-image {
+  margin: 0 auto;
+  margin-bottom: 8px;
 }
 
 .products-subtitle {
@@ -439,6 +551,7 @@ img {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #111;
+  margin-bottom: 2px;
 }
 
 .products-item-text {
@@ -446,12 +559,19 @@ img {
   line-height: 1.17;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.7);
+  margin-bottom: 18px;
 }
 
 .products-item-btn {
   font-weight: 600;
   font-size: 14px;
   color: #111;
+  background: #fafafa;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 14px;
 }
 /** ============================== */
 
@@ -917,6 +1037,26 @@ img {
     line-height: 1.2;
   }
 
+  .hero-wrap{
+    padding: 670px 40px 40px 40px;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)),
+        url(../images/main-bg-tablet.jpg);
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-buy-btn, .hero-made-btn{
+    padding: 14px 40px;
+  }
+
+  .hero-down-btn{
+    margin-top: 0;
+    margin-left: auto;
+  }
+
   .features{
     padding: 50px 0;
   }
@@ -946,11 +1086,40 @@ img {
   .taste-text{
     margin-bottom: 50px;
   }
+
+  .made {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .made-title{
+    margin-bottom: 50px;
+  }
+
+  .products{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .products-list{
+    gap: 32px;
+  }
+
+  .products-item{
+    width: calc((100% - 32px) / 2);
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .container{
     width: 1166px;
+  }
+
+  .hero-wrap{
+    padding: 380px 40px 40px 40px;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)),
+        url(../images/main-bg.jpeg);
   }
 
   .features-list{
@@ -974,6 +1143,17 @@ img {
 
   .taste-item{
     width: calc((100% - 32px * 3) / 4);
-    
+  }
+
+  .made-wrap{
+    flex-wrap: nowrap;
+  }
+
+  .products-list {
+    gap: 24px 18px;
+  }
+
+  .products-item {
+    width: calc((100% - 54px) / 4);
   }
 }
